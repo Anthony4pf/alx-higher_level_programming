@@ -8,4 +8,4 @@ if __name__ == "__main__":
         sum_arg = 0
         for i in range(1, argc):
             sum_arg += int(argv[i])
-        print("{}".format(sum_arg)) 
+        print("{}".format(sum_arg))
