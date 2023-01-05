@@ -6,8 +6,11 @@ if __name__ == "__main__":
     if len_argv == 1:
         print("{} arguments.".format(len_argv - 1))
     else:
-        print("{} arguments:".format(len_argv - 1))
+        if len_argv == 2:
+            print("{} argument:".format(len_argv - 1))
+        else: 
+            print("{} arguments:".format(len_argv - 1))
         i = 1
         while i < len_argv:
-            print("{}: {}".format(i, sys.argv[i]))
-            i += 1
+             print("{}: {}".format(i, sys.argv[i]))
+             i += 1
