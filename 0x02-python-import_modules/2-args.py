@@ -9,5 +9,5 @@ if __name__ == "__main__":
         print("{} arguments:".format(len_argv - 1))
         i = 1
         while i < len_argv:
-            print("{}: {}".format(i, sys.argv[1]))
+            print("{}: {}".format(i, sys.argv[i]))
             i += 1
