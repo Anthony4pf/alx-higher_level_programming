@@ -13,7 +13,7 @@ def max_integer(my_list=[]):
                 temp = my_list[j]
                 my_list[j] = my_list[j + 1]
                 my_list[j + 1] = temp
-        
+
             j += 1
         i -= 1
 
