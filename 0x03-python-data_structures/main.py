@@ -1,13 +1,11 @@
 #!/usr/bin/python3
 
-multiple_returns = __import__('8-multiple_returns').multiple_returns
+max_integer = __import__('9-max_integer').max_integer
 
 
 
-sentence = "At school, I learnt C!"
+my_list = []
 
-length, first = multiple_returns(sentence)
+max_value = max_integer(my_list)
 
-print("Length: {:d} - First character: {}".format(length, first))
-
-
+print("Max: {}".format(max_value))
