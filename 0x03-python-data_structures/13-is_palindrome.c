@@ -15,33 +15,36 @@ int is_palindrome(listint_t **head)
 	int *l_array, *r_array;
 
 	ptr = *head;	
-
 	while (ptr != NULL)
 	{
 		ptr = ptr->next;
 		count++;
 	}
-
 	l_array = malloc(sizeof(int) * count);
+	if (l_array == NULL)
+		exit(0);
 	r_array = malloc(sizeof(int) * count);
-
+	if (r_array == NULL)
+		exit(0);
 	temp = *head;
 	len = count;
-
 	while (temp != NULL)
 	{
 		l_array[i] = temp->n;
-		r_array[count] = temp->n;
+		r_array[len - i - 1] = temp->n;
 		i++;
-		count--;
 		temp = temp->next;
 	}
-
-	for (j = 0; i <= len; j++)
+	for (j = 0; j < count; j++)
 	{
 		if (l_array[j] != r_array[j])
-			return (1);
+		{
+			free(l_array);
+			free(r_array);
+			return (0);
+		}
 	}
-
-	return (0);
+	free(l_array);
+	free(r_array);
+	return (1);
 }
