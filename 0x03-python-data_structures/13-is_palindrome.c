@@ -22,10 +22,10 @@ int is_palindrome(listint_t **head)
 	}
 	l_array = malloc(sizeof(int) * count);
 	if (l_array == NULL)
-		exit(0);
+		return (-1);
 	r_array = malloc(sizeof(int) * count);
 	if (r_array == NULL)
-		exit(0);
+		return (-1);
 	temp = *head;
 	len = count;
 	while (temp != NULL)
