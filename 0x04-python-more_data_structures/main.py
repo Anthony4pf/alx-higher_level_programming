@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 
-uniq_add = __import__('2-uniq_add').uniq_add
+common_elements = __import__('3-common_elements').common_elements
 
 
 
-my_list = [1, 2, 3, 1, 4, 2, 5]
+set_1 = { "Python", "C", "Javascript", "Ruby"}
 
-result = uniq_add(my_list)
+set_2 = { "Bash", "C", "Ruby", "Perl" }
 
-print("Result: {:d}".format(result))
+c_set = common_elements(set_1, set_2)
+
+print(sorted(list(c_set)))
