@@ -2,7 +2,6 @@
 """This Module contains a class for the definition of a rectangle"""
 
 
-
 class Rectangle:
     """This class defines a Rectangle"""
     def __init__(self, width=0, height=0):
