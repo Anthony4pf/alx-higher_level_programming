@@ -5,7 +5,7 @@ The 0-add_integer module supplies one function, add_integer(a, b).
 """
 
 
-def add_integer(a, b=98):
+def add_integer(a, b):
     """Returns the sum of two numbers
     Args:
         a (int, float): first number
