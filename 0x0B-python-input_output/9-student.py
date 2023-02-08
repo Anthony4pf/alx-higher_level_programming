@@ -11,5 +11,5 @@ class Student:
 
     def to_json(self):
         dic = {}
-        dic = self.__dict.__.copy()
+        dic = self.__dict__.copy()
         return dic
