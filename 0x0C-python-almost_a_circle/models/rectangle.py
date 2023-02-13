@@ -14,6 +14,12 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def __str__(self):
+        """string representation of a rectangle instance"""
+        return "[{}] ({}) {}/{} - {}/{}".format(type(self).__name__, self.id,
+                                                self.__x, self.__y,
+                                                self.__width, self.__height)
+
     @property
     def width(self):
         """getter for the __width attribute"""
@@ -69,3 +75,45 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """returns the area of the rectangle instance"""
+        return (self.__width * self.__height)
+
+    def display(self):
+        """prints the to stdout the Rectangle Instance with char #"""
+        print("\n" * self.__y, end="")
+
+        for i in range(self.__height):
+            print((" " * self.__x) + ("#" * self.__width))
+
+    def update(self, *args, **kwargs):
+        """
+            assigns key/value argument to attributes
+            kwargs is skipped if args is not empty
+            Args:
+                *args -  variable number of no-keyword args
+                **kwargs - variable number of keyworded args
+        """
+        if len(args) == 0:
+            for key, val in kwargs.items():
+                self.__setattr__(key, val)
+            return
+
+        try:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+        except IndexError:
+
+            pass
+
+    def to_dictionary(self):
+        """
+            returns the dictionary repr of a rectangle
+        """
+        return {'x': getattr(self, "x"), 'y': getattr(self, "y"),
+                'id': getattr(self, "id"), 'height': getattr(self, "height"),
+                'width': getattr(self, "width")}
