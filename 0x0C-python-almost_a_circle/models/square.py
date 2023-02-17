@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-"""THis module contains the square class"""
+"""This module contains the square class"""
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
     """Square class that inherits from Rectangle"""
     def __init__(self, size, x=0, y=0, id=None):
         """Initialises Square(overrides Rectangle init)"""
-        super.__init__(size, size, x, y, id)
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """Str function of square"""
