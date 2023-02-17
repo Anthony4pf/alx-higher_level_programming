@@ -1,24 +1,16 @@
 #!/usr/bin/python3
-""" 9-main """
+""" 10-main """
 from models.square import Square
+from models.rectangle import Rectangle
 
 if __name__ == "__main__":
 
-    s1 = Square(5)
+    s1 = Rectangle(5, 111)
     print(s1)
-    print(s1.area())
-    s1.display()
+    s1.height = 11
+    print(s1.height)
 
-    print("---")
-
-    s2 = Square(2, 2)
-    print(s2)
-    print(s2.area())
-    s2.display()
-
-    print("---")
-
-    s3 = Square(3, 1, 3)
-    print(s3)
-    print(s3.area())
-    s3.display()
+    try:
+        s1.size = "9"
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name__, e))
