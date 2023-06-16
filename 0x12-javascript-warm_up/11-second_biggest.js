@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-if (process.argv.length <= 2) {
+if (process.argv.length <= 3) {
   console.log(0);
 } else {
   let biggest = parseInt(process.argv[2]);
@@ -13,7 +13,7 @@ if (process.argv.length <= 2) {
     }
   }
 
-  let secondBiggest = parseInt(process.argv[2]);
+  let secondBiggest = 0;
 
   for (let i = 2; i < process.argv.length; i++) {
     if (secondBiggest < parseInt(process.argv[i]) && i !== index) {
